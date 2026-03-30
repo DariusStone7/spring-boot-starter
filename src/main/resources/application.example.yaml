@@ -1,0 +1,61 @@
+server:
+  port: port
+  servlet:
+    context-path: path
+
+spring:
+  application:
+  name: spring-boot-starter
+  # Import the .env file and treat it as a properties file
+  config:
+    import: optional:file:.env[.properties]
+  # Postgres database
+  datasource:
+    url: jdbc:postgresql://db_host:db_port/db_name
+    username: db_username
+    password: db_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  #SMTP config
+  mail:
+    host: smtp_host
+    port: smtp_port
+    username: smtp_email
+    password: smtp_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  # Devtools
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+  thymeleaf:
+    cache: false
+# JWT token
+jwt:
+  access:
+    expiration: 900000
+  refresh:
+    expiration: 3600000
+  otp:
+    expiration: 120000
+# Logging
+logging:
+  file:
+    path: logs/
+    name: logs/application.log
+  level:
+    org:
+      flywaydb: INFO

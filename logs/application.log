@@ -1,0 +1,196 @@
+2026-03-30T00:11:29.834+01:00  INFO 277610 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-30T00:11:29.847+01:00  INFO 277610 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-30T00:11:29.857+01:00  INFO 277610 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T00:11:29.861+01:00  INFO 277610 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-30T00:11:29.891+01:00  INFO 277610 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-30T20:28:29.762+01:00  INFO 12966 --- [restartedMain] com.coop.api.Application                 : Starting Application using Java 21.0.10 with PID 12966 (/home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api/target/classes started by dariusstone7 in /home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api)
+2026-03-30T20:28:29.765+01:00  INFO 12966 --- [restartedMain] com.coop.api.Application                 : No active profile set, falling back to 1 default profile: "default"
+2026-03-30T20:28:29.866+01:00  INFO 12966 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-30T20:28:29.867+01:00  INFO 12966 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-30T20:28:31.420+01:00  INFO 12966 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30T20:28:31.519+01:00  INFO 12966 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
+2026-03-30T20:28:32.554+01:00  INFO 12966 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5070 (http)
+2026-03-30T20:28:32.577+01:00  INFO 12966 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-30T20:28:32.577+01:00  INFO 12966 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-30T20:28:32.646+01:00  INFO 12966 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2777 ms
+2026-03-30T20:28:32.955+01:00  WARN 12966 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30T20:28:33.092+01:00  INFO 12966 --- [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30T20:28:33.178+01:00  INFO 12966 --- [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30T20:28:33.826+01:00  INFO 12966 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30T20:28:33.908+01:00  INFO 12966 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-30T20:28:34.410+01:00  INFO 12966 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e7b837a
+2026-03-30T20:28:34.413+01:00  INFO 12966 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-30T20:28:34.501+01:00  WARN 12966 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30T20:28:34.589+01:00  INFO 12966 --- [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/coop]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.13
+	Default catalog/schema: coop/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30T20:28:36.005+01:00  INFO 12966 --- [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30T20:28:36.125+01:00  INFO 12966 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T20:28:36.396+01:00  INFO 12966 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30T20:28:36.792+01:00  INFO 12966 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30T20:28:37.756+01:00  INFO 12966 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-30T20:28:37.887+01:00  INFO 12966 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-03-30T20:28:38.025+01:00  INFO 12966 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5070 (http) with context path '/api/v1'
+2026-03-30T20:28:38.037+01:00  INFO 12966 --- [restartedMain] com.coop.api.Application                 : Started Application in 9.284 seconds (process running for 9.997)
+2026-03-30T20:29:03.129+01:00  INFO 12966 --- [http-nio-5070-exec-3] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-30T20:29:03.130+01:00  INFO 12966 --- [http-nio-5070-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-30T20:29:03.133+01:00  INFO 12966 --- [http-nio-5070-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-30T20:29:03.419+01:00  WARN 12966 --- [http-nio-5070-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.coop.api.exceptions.TokenException: JWT token is expired: JWT expired at 2026-03-29T23:00:16Z. Current time: 2026-03-30T19:29:03Z, a difference of 73727302 milliseconds.  Allowed clock skew: 0 milliseconds.]
+2026-03-30T20:43:09.902+01:00  INFO 12966 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-30T20:43:09.906+01:00  INFO 12966 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-30T20:43:09.925+01:00  INFO 12966 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T20:43:09.933+01:00  INFO 12966 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-30T20:43:10.003+01:00  INFO 12966 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-30T20:45:56.858+01:00  INFO 21196 --- [restartedMain] com.coop.api.Application                 : Starting Application using Java 21.0.10 with PID 21196 (/home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api/target/classes started by dariusstone7 in /home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api)
+2026-03-30T20:45:56.869+01:00  INFO 21196 --- [restartedMain] com.coop.api.Application                 : No active profile set, falling back to 1 default profile: "default"
+2026-03-30T20:45:57.042+01:00  INFO 21196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-30T20:45:57.044+01:00  INFO 21196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-30T20:45:59.548+01:00  INFO 21196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30T20:45:59.707+01:00  INFO 21196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 3 JPA repository interfaces.
+2026-03-30T20:46:01.455+01:00  INFO 21196 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5070 (http)
+2026-03-30T20:46:01.509+01:00  INFO 21196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-30T20:46:01.510+01:00  INFO 21196 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-30T20:46:01.632+01:00  INFO 21196 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4585 ms
+2026-03-30T20:46:02.177+01:00  WARN 21196 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30T20:46:02.474+01:00  INFO 21196 --- [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30T20:46:02.607+01:00  INFO 21196 --- [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30T20:46:03.673+01:00  INFO 21196 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30T20:46:03.752+01:00  INFO 21196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-30T20:46:04.503+01:00  INFO 21196 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e699428
+2026-03-30T20:46:04.508+01:00  INFO 21196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-30T20:46:04.597+01:00  WARN 21196 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30T20:46:04.658+01:00  INFO 21196 --- [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/coop]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.13
+	Default catalog/schema: coop/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30T20:46:07.320+01:00  INFO 21196 --- [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30T20:46:07.519+01:00  INFO 21196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T20:46:08.100+01:00  INFO 21196 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30T20:46:08.871+01:00  INFO 21196 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30T20:46:10.750+01:00  INFO 21196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-30T20:46:11.007+01:00  INFO 21196 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-03-30T20:46:11.226+01:00  INFO 21196 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5070 (http) with context path '/api/v1'
+2026-03-30T20:46:11.260+01:00  INFO 21196 --- [restartedMain] com.coop.api.Application                 : Started Application in 15.555 seconds (process running for 16.715)
+2026-03-30T20:46:16.964+01:00  INFO 21196 --- [http-nio-5070-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-30T20:46:16.964+01:00  INFO 21196 --- [http-nio-5070-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-30T20:46:16.969+01:00  INFO 21196 --- [http-nio-5070-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-03-30T20:46:17.413+01:00  WARN 21196 --- [http-nio-5070-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.coop.api.exceptions.TokenException: JWT token is expired: JWT expired at 2026-03-30T19:44:16Z. Current time: 2026-03-30T19:46:17Z, a difference of 121145 milliseconds.  Allowed clock skew: 0 milliseconds.]
+2026-03-30T20:46:35.286+01:00  INFO 21196 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-30T20:46:35.289+01:00  INFO 21196 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-30T20:46:35.312+01:00  INFO 21196 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T20:46:35.326+01:00  INFO 21196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-30T20:46:35.378+01:00  INFO 21196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-30T21:59:13.502+01:00  INFO 53481 --- [restartedMain] com.coop.api.Application                 : Starting Application using Java 21.0.10 with PID 53481 (/home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api/target/classes started by dariusstone7 in /home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api)
+2026-03-30T21:59:13.506+01:00  INFO 53481 --- [restartedMain] com.coop.api.Application                 : No active profile set, falling back to 1 default profile: "default"
+2026-03-30T21:59:13.606+01:00  INFO 53481 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-30T21:59:13.607+01:00  INFO 53481 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-30T21:59:14.762+01:00  INFO 53481 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30T21:59:14.842+01:00  INFO 53481 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 3 JPA repository interfaces.
+2026-03-30T21:59:15.704+01:00  INFO 53481 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5070 (http)
+2026-03-30T21:59:15.721+01:00  INFO 53481 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-30T21:59:15.722+01:00  INFO 53481 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-30T21:59:15.776+01:00  INFO 53481 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2168 ms
+2026-03-30T21:59:16.024+01:00  WARN 53481 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30T21:59:16.161+01:00  INFO 53481 --- [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30T21:59:16.218+01:00  INFO 53481 --- [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30T21:59:16.670+01:00  INFO 53481 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30T21:59:16.715+01:00  INFO 53481 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-30T21:59:17.047+01:00  INFO 53481 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e699428
+2026-03-30T21:59:17.049+01:00  INFO 53481 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-30T21:59:17.082+01:00  WARN 53481 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30T21:59:17.172+01:00  INFO 53481 --- [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/coop]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.13
+	Default catalog/schema: coop/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30T21:59:18.431+01:00  INFO 53481 --- [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30T21:59:18.517+01:00  INFO 53481 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T21:59:18.784+01:00  INFO 53481 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30T21:59:19.148+01:00  INFO 53481 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30T21:59:20.078+01:00  INFO 53481 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-30T21:59:20.192+01:00  INFO 53481 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-03-30T21:59:20.309+01:00  INFO 53481 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5070 (http) with context path '/api/v1'
+2026-03-30T21:59:20.322+01:00  INFO 53481 --- [restartedMain] com.coop.api.Application                 : Started Application in 7.361 seconds (process running for 7.867)
+2026-03-30T21:59:55.242+01:00  INFO 53481 --- [http-nio-5070-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-30T21:59:55.243+01:00  INFO 53481 --- [http-nio-5070-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-30T21:59:55.246+01:00  INFO 53481 --- [http-nio-5070-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-30T21:59:55.473+01:00  WARN 53481 --- [http-nio-5070-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.coop.api.exceptions.TokenException: JWT token is expired: JWT expired at 2026-03-30T20:01:27Z. Current time: 2026-03-30T20:59:55Z, a difference of 3508371 milliseconds.  Allowed clock skew: 0 milliseconds.]
+2026-03-30T22:00:02.557+01:00  WARN 53481 --- [http-nio-5070-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.coop.api.exceptions.TokenException: Refresh token is expired:  RefreshToken expired at 2026-03-30T20:29:16.560033Z]
+2026-03-30T22:06:32.296+01:00  INFO 53481 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-30T22:06:32.299+01:00  INFO 53481 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-30T22:06:32.314+01:00  INFO 53481 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T22:06:32.320+01:00  INFO 53481 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-30T22:06:32.340+01:00  INFO 53481 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-30T22:54:44.392+01:00  INFO 82084 --- [restartedMain] com.coop.api.Application                 : Starting Application using Java 21.0.10 with PID 82084 (/home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api/target/classes started by dariusstone7 in /home/dariusstone7/Darius/PROJECTS/KONTROL/COOP/api)
+2026-03-30T22:54:44.404+01:00  INFO 82084 --- [restartedMain] com.coop.api.Application                 : No active profile set, falling back to 1 default profile: "default"
+2026-03-30T22:54:44.669+01:00  INFO 82084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-30T22:54:44.672+01:00  INFO 82084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-30T22:54:47.473+01:00  INFO 82084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-30T22:54:47.642+01:00  INFO 82084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 3 JPA repository interfaces.
+2026-03-30T22:54:49.703+01:00  INFO 82084 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5070 (http)
+2026-03-30T22:54:49.733+01:00  INFO 82084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-30T22:54:49.735+01:00  INFO 82084 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-30T22:54:49.841+01:00  INFO 82084 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5168 ms
+2026-03-30T22:54:50.365+01:00  WARN 82084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-30T22:54:50.711+01:00  INFO 82084 --- [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-30T22:54:50.868+01:00  INFO 82084 --- [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-30T22:54:52.133+01:00  INFO 82084 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-30T22:54:52.240+01:00  INFO 82084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-30T22:54:53.096+01:00  INFO 82084 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@312308ce
+2026-03-30T22:54:53.099+01:00  INFO 82084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-30T22:54:53.183+01:00  WARN 82084 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-30T22:54:53.272+01:00  INFO 82084 --- [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/coop]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.13
+	Default catalog/schema: coop/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-30T22:54:55.965+01:00  INFO 82084 --- [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-30T22:54:56.146+01:00  INFO 82084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T22:54:56.793+01:00  INFO 82084 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-30T22:54:57.488+01:00  INFO 82084 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-03-30T22:54:59.696+01:00  INFO 82084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-03-30T22:54:59.941+01:00  INFO 82084 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-03-30T22:55:00.182+01:00  INFO 82084 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5070 (http) with context path '/api/v1'
+2026-03-30T22:55:00.206+01:00  INFO 82084 --- [restartedMain] com.coop.api.Application                 : Started Application in 17.079 seconds (process running for 18.241)
+2026-03-30T22:55:04.454+01:00  INFO 82084 --- [http-nio-5070-exec-1] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-30T22:55:04.455+01:00  INFO 82084 --- [http-nio-5070-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-30T22:55:04.459+01:00  INFO 82084 --- [http-nio-5070-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-03-30T22:55:04.926+01:00  WARN 82084 --- [http-nio-5070-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.coop.api.exceptions.TokenException: JWT token is expired: JWT expired at 2026-03-30T21:15:08Z. Current time: 2026-03-30T21:55:04Z, a difference of 2396721 milliseconds.  Allowed clock skew: 0 milliseconds.]
+2026-03-30T22:55:49.005+01:00  WARN 82084 --- [http-nio-5070-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.HashSet<com.coop.api.modules.users.entity.Profile>` from String value (token `JsonToken.VALUE_STRING`)]
+2026-03-30T22:57:06.141+01:00  WARN 82084 --- [http-nio-5070-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot coerce `null` to `boolean` value (disable `DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES` to allow)]
+2026-03-30T23:01:16.414+01:00  INFO 82084 --- [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-30T23:01:16.418+01:00  INFO 82084 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-03-30T23:01:16.444+01:00  INFO 82084 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-30T23:01:16.452+01:00  INFO 82084 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-30T23:01:16.495+01:00  INFO 82084 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

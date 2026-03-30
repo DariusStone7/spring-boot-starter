@@ -1,0 +1,139 @@
+package com.coop.api.modules.users.service;
+
+import com.coop.api.core.service.UserService;
+import com.coop.api.core.entity.User;
+import com.coop.api.core.enums.UserStatus;
+import com.coop.api.exceptions.ResourceAlreadyExistsException;
+import com.coop.api.exceptions.ResourceNotFoundException;
+import com.coop.api.modules.users.dto.UserDto;
+import com.coop.api.modules.users.repository.UserRepository;
+import jakarta.persistence.criteria.Predicate;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class UserServiceImpl implements UserService {
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private ModelMapper modelMapper;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Override
+    public Page<User> findAll(int page, int size, String sortBy, String sortDir, String username, String email, String status) {
+
+        Sort sort = ("desc").equals(sortDir) ? Sort.by(sortBy).descending() : Sort.by(sortBy).ascending();
+        Pageable pageable = PageRequest.of(page, size, sort);
+
+        Specification<User> spec = (root, query, cb) -> {
+            List<Predicate> predicates = new ArrayList<>();
+
+            if(username != null && !username.isEmpty()){
+                predicates.add(cb.like(cb.lower(root.get("username")), "%" + username.toLowerCase() + "%"));
+            }
+
+            if(email != null && !email.isEmpty()){
+                predicates.add(cb.like(cb.lower(root.get("email")), "%" + email.toLowerCase() + "%"));
+            }
+
+            if(status != null && !status.isEmpty()){
+                predicates.add(cb.like(cb.lower(root.get("status")), "%" + status.toLowerCase() + "%"));
+            }
+
+            return  cb.and(predicates.toArray(new Predicate[0]));
+        };
+
+        return userRepository.findAll(spec, pageable);
+    }
+
+    @Override
+    public User findOne(Long id) {
+        return userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User not found"));
+    }
+
+    @Override
+    public ResponseEntity<String> add(UserDto userDto) {
+        try {
+            User user = userRepository.findByUsernameOrEmail(userDto.getUsername(), userDto.getEmail());
+            if (user != null) {
+                throw new ResourceAlreadyExistsException(String.format("User with username = %s or email = %s already exist", userDto.getUsername(), userDto.getEmail()));
+            }
+            userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
+            user = new User();
+            BeanUtils.copyProperties(userDto, user);
+            userRepository.save(user);
+
+            return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully");
+        } catch (Exception e) {
+            System.out.println("User registration error: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        }
+    }
+
+    @Override
+    public ResponseEntity<String> update(Long id, UserDto userDto) throws ResourceNotFoundException {
+        Optional<User> user = userRepository.findById(id);
+
+        if (user.isEmpty()) {
+            throw new ResourceNotFoundException(String.format("User with username = %s not found", userDto.getUsername()));
+        }
+        user.get().setUsername(userDto.getUsername());
+        user.get().setProfiles(userDto.getProfiles());
+        user.get().setName(userDto.getName());
+        user.get().setEmail(userDto.getEmail());
+        userRepository.save(user.get());
+
+        return ResponseEntity.ok("User updated successfully");
+    }
+
+    @Override
+    public ResponseEntity<String> enable(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new ResourceNotFoundException(String.format("User with id = %d not found", id));
+        }
+        user.get().setStatus(UserStatus.ACTIVE);
+        userRepository.save(user.get());
+
+        return ResponseEntity.ok("User enabled successfully");
+    }
+
+    @Override
+    public ResponseEntity<String> disable(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new ResourceNotFoundException(String.format("User with id = %d not found", id));
+        }
+        user.get().setStatus(UserStatus.INACTIVE);
+        userRepository.save(user.get());
+
+        return ResponseEntity.ok("User disabled successfully");
+    }
+
+    @Override
+    public ResponseEntity<String> delete(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new ResourceNotFoundException(String.format("User with id = %d not found", id));
+        }
+        userRepository.deleteById(id);
+        return ResponseEntity.ok("User deleted successfully");
+    }
+}
