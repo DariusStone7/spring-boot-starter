@@ -35,3 +35,6 @@ build/
 ### App config ###
 .env
 **/src/main/resources/application.yaml
+
+### logs ###
+logs/
