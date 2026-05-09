@@ -1,8 +1,11 @@
 package com.coop.api.core.entity;
 
 import com.coop.api.core.enums.UserStatus;
+import com.coop.api.modules.security.entity.Otp;
+import com.coop.api.modules.security.entity.RefreshToken;
 import com.coop.api.modules.users.entity.AccessRight;
 import com.coop.api.modules.users.entity.Profile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
@@ -11,7 +14,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,14 +37,14 @@ public class User extends BaseEntity{
     @Column(unique = true)
     @Size(min = 9)
     private String phone;
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String password;
     @Enumerated(EnumType.STRING)
     private UserStatus status = UserStatus.ACTIVE;
     @Column(name = "is_otp_enabled")
     private Boolean isOtpEnabled = false;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_profiles", // Name of the join table
             joinColumns = @JoinColumn(name = "user_id"), // Column in join table referring to User
@@ -50,11 +52,20 @@ public class User extends BaseEntity{
     )
     private Set<Profile> profiles = new HashSet<>();
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_access_rights", // Name of the join table
             joinColumns = @JoinColumn(name = "user_id"), // Column in join table referring to User
             inverseJoinColumns = @JoinColumn(name = "access_right_id") // Column in join table referring to AccessRight
     )
     private Set<AccessRight> accessRights = new HashSet<>();
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private RefreshToken refreshToken;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JsonIgnore
+    private Set <Otp> otp = new HashSet<>();
+
 }

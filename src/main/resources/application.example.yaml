@@ -45,6 +45,7 @@ spring:
     cache: false
 # JWT token
 jwt:
+  secret: jwt_secret
   access:
     expiration: 900000
   refresh:

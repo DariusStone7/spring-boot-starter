@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable(required = true) Long id) {
+    public User findOne(@PathVariable(required = true) Long id) {
         return userService.findOne(id);
     }
 
@@ -39,7 +39,7 @@ public class UserController {
         return userService.add(userDto);
     }
 
-    @PutMapping("")
+    @PutMapping("/{id}")
     public ResponseEntity<String> update(@PathVariable(required = true) Long id, @Valid @RequestBody() UserDto userDto) {
         return userService.update(id, userDto);
     }

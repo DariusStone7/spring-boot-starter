@@ -14,7 +14,7 @@ public class AuditorAwareImpl implements AuditorAware<String> {
 
         if (authentication == null || !authentication.isAuthenticated() ||
                 authentication instanceof AnonymousAuthenticationToken) {
-            return Optional.of("SYSTEM"); // Pour les actions hors connexion (ex: inscription)
+            return Optional.of("SYSTEM"); // for unauthenticate actions (eg: sign up)
         }
 
         return Optional.of(authentication.getName());

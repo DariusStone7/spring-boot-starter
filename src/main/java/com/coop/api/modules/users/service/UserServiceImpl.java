@@ -8,8 +8,8 @@ import com.coop.api.exceptions.ResourceNotFoundException;
 import com.coop.api.modules.users.dto.UserDto;
 import com.coop.api.modules.users.repository.UserRepository;
 import jakarta.persistence.criteria.Predicate;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,11 +22,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Page<User> findAll(int page, int size, String sortBy, String sortDir, String username, String email, String status) {
-
+        log.info("Find all users attempt");
         Sort sort = ("desc").equals(sortDir) ? Sort.by(sortBy).descending() : Sort.by(sortBy).ascending();
         Pageable pageable = PageRequest.of(page, size, sort);
 
@@ -65,15 +65,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findOne(Long id) {
+        log.info("Find one user attempt");
         return userRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("User not found"));
     }
 
     @Override
     public ResponseEntity<String> add(UserDto userDto) {
         try {
+            log.info("Add user attempt");
             User user = userRepository.findByUsernameOrEmail(userDto.getUsername(), userDto.getEmail());
             if (user != null) {
-                throw new ResourceAlreadyExistsException(String.format("User with username = %s or email = %s already exist", userDto.getUsername(), userDto.getEmail()));
+                throw new ResourceAlreadyExistsException(String.format("User already exist", userDto.getUsername(), userDto.getEmail()));
             }
             userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
             user = new User();
@@ -89,10 +91,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> update(Long id, UserDto userDto) throws ResourceNotFoundException {
+        log.info("Update user attempt");
         Optional<User> user = userRepository.findById(id);
 
         if (user.isEmpty()) {
-            throw new ResourceNotFoundException(String.format("User with username = %s not found", userDto.getUsername()));
+            throw new ResourceNotFoundException(String.format("User not found", userDto.getUsername()));
         }
         user.get().setUsername(userDto.getUsername());
         user.get().setProfiles(userDto.getProfiles());
@@ -105,9 +108,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> enable(Long id) {
+        log.info("Enable user attempt");
         Optional<User> user = userRepository.findById(id);
         if (user.isEmpty()) {
-            throw new ResourceNotFoundException(String.format("User with id = %d not found", id));
+            throw new ResourceNotFoundException(String.format("User not found", id));
         }
         user.get().setStatus(UserStatus.ACTIVE);
         userRepository.save(user.get());
@@ -117,9 +121,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> disable(Long id) {
+        log.info("Disable user attempt");
         Optional<User> user = userRepository.findById(id);
         if (user.isEmpty()) {
-            throw new ResourceNotFoundException(String.format("User with id = %d not found", id));
+            throw new ResourceNotFoundException(String.format("User not found", id));
         }
         user.get().setStatus(UserStatus.INACTIVE);
         userRepository.save(user.get());
@@ -129,9 +134,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> delete(Long id) {
+        log.info("Delete user attempt");
         Optional<User> user = userRepository.findById(id);
         if (user.isEmpty()) {
-            throw new ResourceNotFoundException(String.format("User with id = %d not found", id));
+            throw new ResourceNotFoundException(String.format("User not found", id));
         }
         userRepository.deleteById(id);
         return ResponseEntity.ok("User deleted successfully");
