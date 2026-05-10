@@ -1,0 +1,32 @@
+package com.spring_boot_starter.api.modules.security.entity;
+
+import com.spring_boot_starter.api.core.entity.User;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.Instant;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class RefreshToken {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
+    @OneToOne(fetch = FetchType.LAZY)
+    private User user;
+
+    @Column(nullable = false, unique = true)
+    private String token;
+
+    @Column(nullable = false)
+    private Instant expiryDate;
+}
